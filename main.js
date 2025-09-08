@@ -15,3 +15,13 @@ function getComputerChoice(){
     }
 
 }
+function getHumanChoice(){
+    let choice = prompt("Rock, Paper, Scissor?").toLowerCase()
+    return choice
+    }
+
+function playRound(humanChoice,computerChoice){
+
+    
+}
+
