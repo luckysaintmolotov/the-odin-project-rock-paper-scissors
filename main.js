@@ -40,6 +40,26 @@ function playRound(user_choice, computer_choice){
         return "You lose!"
     }
 }
-const computerChoice = getComputerChoice()
-const humanChoice = getHumanChoice()
-console.log(playRound(humanChoice,computerChoice))
+
+function playGame(rounds){
+    let user_score = 0
+    let computer_score = 0
+    let round = 0
+    while (round < rounds){
+        let user_choice = getHumanChoice()
+        let computer_choice = getComputerChoice().toLowerCase()
+        let result = playRound(user_choice, computer_choice)
+        if (result === "You win!")
+        {
+            user_score += 1
+        }
+        else if (result === "You lose!")
+        {
+            computer_score += 1
+        }
+        console.log(`Round ${round + 1}: You chose ${user_choice}, computer chose ${computer_choice}. ${result}`)
+        round += 1
+
+    }}
+
+playGame(5)
