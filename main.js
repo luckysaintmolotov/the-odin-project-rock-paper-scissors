@@ -20,8 +20,26 @@ function getHumanChoice(){
     return choice
     }
 
-function playRound(humanChoice,computerChoice){
-
+function playRound(user_choice, computer_choice){
+    const win_conditions = {
+        "rock": "scissor",
+        "paper": "rock",
+        "scissor": "paper"
+    }
     
+    if (user_choice === computer_choice)
+    {
+        return "It's a tie!"
+    }
+    else if (win_conditions[user_choice] === computer_choice)
+    {
+        return "You win!"
+    }
+    else 
+    {
+        return "You lose!"
+    }
 }
-
+const computerChoice = getComputerChoice()
+const humanChoice = getHumanChoice()
+console.log(playRound(humanChoice,computerChoice))
